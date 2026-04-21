@@ -7,7 +7,7 @@
 :root {
   --color-dark:    #0f1117;
   --color-mid:     #1c2130;
-  --color-accent:  #e8c547;
+  --color-accent:  #e8d847;
   --color-accent2: #4f8ef7;
   --color-light:   #f4f1eb;
   --color-white:   #ffffff;
@@ -104,6 +104,7 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 /* ============================================================
    SECCIÓN 1: HEADER
    ============================================================ */
+<<<<<<< seccion-PIERO
    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
    :root {
@@ -328,6 +329,89 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
        display: none;
      }
    }
+=======
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0 5%;
+  background: radial-gradient(circle at top, rgba(0, 17, 255, 0.12), rgba(128, 0, 255, 0.08), transparent 40%),
+                linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background var(--transition);
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+
+.logo-icon {
+  height: 40px;      
+  width: auto;       
+  object-fit: contain; 
+  display: block;
+}
+
+.logo-text strong {
+  font-weight: 700;
+  color: var(--color-text); 
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  transition: color var(--transition);
+}
+.nav-links a:hover { color: var(--color-white); }
+
+.btn-matricula {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform var(--transition);
+}
+.btn-matricula:hover { transform: scale(1.05); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+>>>>>>> main
 
 /* ============================================================
    SECCIÓN 2: PRESENTACIÓN (HERO)
@@ -605,6 +689,7 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 }
 
 .valor {
+<<<<<<< seccion-PIERO
   background: rgba(10, 0, 15, 0.85);
   border: 1px solid rgba(245,200,66,0.15);
   border-radius: 16px;
@@ -639,6 +724,18 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   letter-spacing: 0.01em;
   white-space: nowrap;
   text-decoration: none;
+=======
+  background: rgba(10, 0, 15, 0.9);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-radius: 20px;
+    padding: 22px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+>>>>>>> main
 }
 
 .valor-icon img {
