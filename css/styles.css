@@ -427,6 +427,21 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   min-height: 20px;
 }
 
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: #e85c5c;
+}
+.form-group input.input-ok,
+.form-group textarea.input-ok {
+  border-color: #5cdb95;
+}
+.field-error {
+  font-size: 0.78rem;
+  color: #e85c5c;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
 
 /* ============================================================
    SECCIÓN 6: FOOTER
