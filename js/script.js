@@ -101,6 +101,10 @@ if (form) {
   });
 }
 
+// ── Footer: año dinámico ─────────────────────────────────────
+const yearEl = document.getElementById('footer-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 // ── Animación de aparición al hacer scroll ───────────────────
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
