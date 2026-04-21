@@ -310,30 +310,49 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
     padding: 100px 5%;
     max-width: var(--max-width);
     margin: 0 auto;
-    position: relative; 
-    overflow: hidden;    
-    background: #050008;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top right, #1a0033 0%, #050008 100%);
   }
-
+  
+  
   #nosotros::before {
     content: "";
     position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px white, 
-                0 0 20px 2px rgba(251, 255, 0, 0.5), 
-                -50px 0 30px 2px rgba(255, 255, 255, 0.2);
+    top: -100px;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: transparent;
     
-    /* Animación */
-    animation: estrellaFugaz 5s linear infinite;
+    box-shadow: 
+      400px 100px #fff, 
+      800px 300px #fff, 
+      1200px 150px #fbff00;
+    
+   
+    animation: lluviaMasiva 6s linear infinite;
     opacity: 0;
   }
   
-  @keyframes estrellaFugaz {
+  
+  #nosotros::after {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: 200px;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 
+      200px 50px rgba(255,255,255,0.8), 
+      600px 250px rgba(251,255,0,0.5);
+    animation: lluviaMasiva 4s linear infinite;
+    animation-delay: 2s; 
+    opacity: 0;
+  }
+  
+  @keyframes lluviaMasiva {
     0% {
       transform: rotate(35deg) translateX(0);
       opacity: 0;
@@ -341,12 +360,17 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
     10% {
       opacity: 1;
     }
-    20% {
-      transform: rotate(35deg) translateX(1200px); 
+    40% {
+      
+      box-shadow: 
+        400px 100px 20px 2px white, 
+        800px 300px 20px 2px white, 
+        1200px 150px 20px 2px #fbff00;
+      transform: rotate(35deg) translateX(1500px);
       opacity: 0;
     }
     100% {
-      transform: rotate(35deg) translateX(1200px);
+      transform: rotate(35deg) translateX(1500px);
       opacity: 0;
     }
   }
@@ -409,6 +433,14 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   font-family: var(--font-body);
   white-space: nowrap;
   text-decoration: none; 
+}
+
+.valor-icon img {
+  height: 1.3rem; 
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 5px rgba(251, 255, 0, 0.6));
 }
 
 
