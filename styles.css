@@ -332,7 +332,7 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 }
 
 .nosotros-text p {
-  color: #a0a0a0; /* Gris más suave */
+  color: #3d3d3d; /* Gris más suave */
   line-height: 1.6;
   max-width: 90%; /* Para que las líneas no sean tan largas */
 }
@@ -380,17 +380,25 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 .nosotros-visual { flex: 1; }
 
 .nosotros-img-placeholder {
-  background: var(--color-mid);
-  border: 2px dashed rgba(255,255,255,0.12);
-  border-radius: 20px;
-  height: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--color-muted);
-  font-size: 0.9rem;
+  background: linear-gradient(145deg, rgba(30, 30, 40, 0.4), rgba(10, 10, 15, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px; /* Más redondeado */
+  height: 450px; /* Un poco más alto para equilibrar el texto */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto decorativo de fondo */
+.nosotros-img-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: var(--color-accent);
+  filter: blur(100px);
+  opacity: 0.1;
 }
 .nosotros-img-placeholder span { font-size: 3rem; }
 
