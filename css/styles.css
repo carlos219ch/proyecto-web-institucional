@@ -343,6 +343,11 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 
 .card-number {
   font-size: 2.4rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: -0.03em;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
   color: var(--color-accent);
 }
 
@@ -356,148 +361,128 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 /* ============================================================
    SECCIÓN 3: SERVICIOS
    ============================================================ */
-   #servicios {
-    padding: 100px 5%;
-    background: var(--color-mid);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  #servicios::before {
-    content: '';
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(232,197,71,0.06) 0%, transparent 70%);
-    top: -200px;
-    right: -100px;
-    pointer-events: none;
-  }
-  
-  #servicios .section-header {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    margin-bottom: 60px;
-    max-width: 560px;
-  }
-  
-  .services-grid {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  .service-card {
-    background: var(--color-dark);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius);
-    padding: 36px 30px;
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(232,197,71,0.5), transparent);
-    transform: scaleX(0);
-    transition: transform var(--transition);
-  }
-  
-  .service-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(232, 197, 71, 0.2);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(232,197,71,0.08);
-  }
-  
-  .service-card:hover::after {
-    transform: scaleX(1);
-  }
-  
-  .service-card.featured {
-    background: var(--color-accent);
-    color: var(--color-dark);
-    border-color: transparent;
-    box-shadow: 0 12px 40px rgba(232, 197, 71, 0.25);
-  }
-  
-  .service-card.featured::after {
-    display: none;
-  }
-  
-  .service-card.featured:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 56px rgba(232, 197, 71, 0.35);
-    border-color: transparent;
-  }
-  
-  .service-icon {
-    font-size: 1.6rem;
-    background: rgba(232, 197, 71, 0.1);
-    width: 54px;
-    height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    margin-bottom: 22px;
-    border: 1px solid rgba(232, 197, 71, 0.15);
-    transition: background var(--transition), transform var(--transition);
-  }
-  
-  .service-card:hover .service-icon {
-    background: rgba(232, 197, 71, 0.16);
-    transform: scale(1.08);
-  }
-  
-  .service-card.featured .service-icon {
-    background: rgba(0, 0, 0, 0.12);
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-  
-  .service-card.featured:hover .service-icon {
-    background: rgba(0, 0, 0, 0.18);
-  }
-  
-  .service-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-  }
-  
-  .service-card p {
-    font-size: 0.88rem;
-    color: var(--color-muted);
-    line-height: 1.75;
-  }
-  
-  .service-card.featured p {
-    color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .service-card .srv-number {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    color: rgba(232, 197, 71, 0.35);
-    display: block;
-    margin-bottom: 18px;
-    font-family: var(--font-display);
-  }
-  
-  .service-card.featured .srv-number {
-    color: rgba(0, 0, 0, 0.25);
-  }
+ /* --- SECCIÓN SERVICIOS (MEJORADA) --- */
+#servicios {
+  padding: 100px 5%;
+  background: var(--color-mid);
+  position: relative;
+  overflow: hidden;
+}
 
+/* Luz de fondo más difusa y presente */
+#servicios::before {
+  content: '';
+  position: absolute;
+  width: 800px; /* Más grande para suavizar */
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,197,71,0.08) 0%, transparent 70%);
+  top: -300px;
+  right: -150px;
+  pointer-events: none;
+  filter: blur(40px); /* Suaviza la transición de la luz */
+}
+
+.services-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px; /* Un poco más de aire */
+}
+
+/* Tarjeta con Efecto Glassmorphism */
+.service-card {
+  background: rgba(255, 255, 255, 0.02); /* Fondo semi-transparente */
+  backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Transición más fluida */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea de brillo inferior mejorada */
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px; /* Un poco más gruesa para que se note */
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  transform: scaleX(0);
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Elevación más pronunciada */
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(232, 197, 71, 0.3);
+  /* Sombra más profunda y difuminada */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Tarjeta DESTACADA (Impacto visual máximo) */
+.service-card.featured {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #f1d35a 100%);
+  color: var(--color-dark);
+  border: none;
+  /* Glow externo del color de la tarjeta */
+  box-shadow: 0 15px 35px rgba(232, 197, 71, 0.2);
+}
+
+.service-card.featured:hover {
+  transform: translateY(-10px) scale(1.02); /* Crece ligeramente */
+  box-shadow: 0 30px 60px rgba(232, 197, 71, 0.4);
+}
+
+/* Iconos con relieve */
+.service-icon {
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05); /* Efecto de profundidad interna */
+}
+
+.service-card:hover .service-icon {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  transform: scale(1.1) rotate(5deg); /* Pequeña rotación para dinamismo */
+  box-shadow: 0 10px 20px rgba(232, 197, 71, 0.2);
+}
+
+/* Estilos de texto (sin cambiar fuentes) */
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.service-card.featured p {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
 /* ============================================================
    SECCIÓN 4: NOSOTROS
    ============================================================ */
