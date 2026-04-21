@@ -101,6 +101,32 @@ if (form) {
   });
 }
 
+// ── Contador de caracteres en el mensaje ─────────────────────
+const mensajeInput = document.getElementById('mensaje');
+const charCount    = document.getElementById('char-count');
+const charCounter  = document.querySelector('.char-counter');
+
+if (mensajeInput && charCount) {
+  mensajeInput.addEventListener('input', () => {
+    const len = mensajeInput.value.length;
+    charCount.textContent = len;
+    charCounter.classList.remove('near-limit', 'at-limit');
+    if (len >= 500)      charCounter.classList.add('at-limit');
+    else if (len >= 400) charCounter.classList.add('near-limit');
+  });
+}
+
+// ── Botón volver arriba ───────────────────────────────────────
+const btnTop = document.getElementById('btn-top');
+if (btnTop) {
+  window.addEventListener('scroll', () => {
+    btnTop.classList.toggle('visible', window.scrollY > 400);
+  });
+  btnTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // ── Footer: año dinámico ─────────────────────────────────────
 const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

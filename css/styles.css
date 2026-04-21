@@ -608,6 +608,15 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   min-height: 20px;
 }
 
+.direccion-link {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+.direccion-link:hover { color: var(--color-accent); }
+
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -626,6 +635,20 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
 }
 
+.mensaje-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.char-counter {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  text-align: right;
+  transition: color var(--transition);
+}
+.char-counter.near-limit { color: var(--color-accent); }
+.char-counter.at-limit   { color: #e85c5c; }
+
 .form-group input.input-error,
 .form-group textarea.input-error {
   border-color: #e85c5c;
@@ -641,6 +664,31 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   min-height: 16px;
 }
 
+
+/* ── Botón volver arriba ─────────────────────────────────────── */
+#btn-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 99;
+}
+#btn-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#btn-top:hover { transform: translateY(-3px); }
 
 /* ============================================================
    SECCIÓN 6: FOOTER
