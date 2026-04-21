@@ -322,40 +322,59 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 
 .nosotros-text h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.2;
-  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Un poco más de impacto */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #fff, var(--color-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 .nosotros-text p {
-  color: var(--color-muted);
-  margin-bottom: 16px;
-  font-size: 0.95rem;
+  color: #a0a0a0; /* Gris más suave */
+  line-height: 1.6;
+  max-width: 90%; /* Para que las líneas no sean tan largas */
 }
 
-.valores-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 36px;
-}
-
+/* Ajuste en el contenedor de los cuadros */
 .valor {
-  background: rgba(10, 0, 15, 0.9);
-  border: 1px solid rgba(164, 167, 19, 0.2);
-  border-radius: 20px;
-  padding: 22px;
-  min-height: 140px;
+  background: rgba(15, 2, 25, 0.6); /* Un poco más traslúcido */
+  backdrop-filter: blur(10px);      /* Efecto de cristal esmerilado */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  min-height: 120px; /* Reducido un poco para que no sobre tanto espacio */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 0 30px rgba(255, 0, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  justify-content: flex-start; /* Alineado arriba para mejor control */
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.valor:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 30px rgba(164, 167, 19, 0.2);
+}
+
+
+.valor-icon {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  gap: 8px;
+}
+
 .valor-icon img {
-  height: 1.3rem; 
+  height: 28px; 
   width: auto;
-  object-fit: contain;
-  vertical-align: middle;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.valor strong {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #fff;
 }
 
 .nosotros-visual { flex: 1; }
