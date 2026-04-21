@@ -627,6 +627,15 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   min-height: 20px;
 }
 
+.direccion-link {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+.direccion-link:hover { color: var(--color-accent); }
+
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
