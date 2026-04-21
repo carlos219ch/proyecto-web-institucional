@@ -18,18 +18,22 @@
        ============================================================ -->
   <header id="header">
     <nav class="navbar">
-      <div class="logo">
+
+      <a href="#" class="logo">
         <img src="./png/Icon.png" alt="Logo" class="logo-icon">
         <span class="logo-text">Instituto <strong>Luz</strong></span>
-      </div>
-      <ul class="nav-links">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#presentacion">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
+
       <button class="btn-matricula">Matrícula 2026</button>
-      <button class="menu-toggle" aria-label="Menú">&#9776;</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">&#9776;</button>
+
     </nav>
   </header>
   <!-- ============================================================
@@ -44,57 +48,54 @@
          Equipo encargado: ___________
          Archivos: index.html (esta sección) + css/styles.css (#presentacion)
          ============================================================ -->
-         <section id="presentacion">
+    <section id="presentacion">
 
-          <!-- 🔥 FONDO (mover aquí) -->
-          <div class="carousel">
-            <div class="carousel-track">
-              <div class="slide">
-                <img src="png/img1.png" alt="Estudiantes">
-              </div>
-              <div class="slide">
-                <img src="png/img2.png" alt="Aula">
-              </div>
-              <div class="slide">
-                <img src="png/img3.png" alt="Laboratorio">
-              </div>
-            </div>
-        
-            <button class="carousel-btn prev">❮</button>
-            <button class="carousel-btn next">❯</button>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="slide">
+            <img src="png/img1.png" alt="Estudiantes">
           </div>
-        
-          <!-- TEXTO -->
-          <div class="hero-content">
-            <span class="hero-badge">↳ Formando líderes desde 1998</span>
-            <h1>Educación que<br /><em>transforma</em> vidas</h1>
-            <p>En Instituto Lumina creemos que cada estudiante tiene el potencial de cambiar el mundo...</p>
-        
-            <div class="hero-actions">
-              <a href="#servicios" class="btn-primary">Conoce nuestros programas</a>
-              <a href="#nosotros" class="btn-secondary">¿Quiénes somos?</a>
-            </div>
+          <div class="slide">
+            <img src="png/img2.png" alt="Aula">
           </div>
-        
-          <!-- CARDS -->
-          <div class="hero-visual">
-            <div class="hero-card card-1">
-              <span class="card-number">98%</span>
-              <span class="card-label">Tasa de aprobación</span>
-            </div>
-        
-            <div class="hero-card card-2">
-              <span class="card-number">25+</span>
-              <span class="card-label">Años de experiencia</span>
-            </div>
-        
-            <div class="hero-card card-3">
-              <span class="card-number">1,200</span>
-              <span class="card-label">Alumnos activos</span>
-            </div>
+          <div class="slide">
+            <img src="png/img3.png" alt="Laboratorio">
           </div>
-        
-        </section>
+        </div>
+
+        <button class="carousel-btn prev">❮</button>
+        <button class="carousel-btn next">❯</button>
+      </div>
+
+      <div class="hero-content">
+        <span class="hero-badge">↳ Formando líderes desde 1998</span>
+        <h1>Educación que<br /><em>transforma</em> vidas</h1>
+        <p>En Instituto Lumina creemos que cada estudiante tiene el potencial de cambiar el mundo...</p>
+
+        <div class="hero-actions">
+          <a href="#servicios" class="btn-primary">Conoce nuestros programas</a>
+          <a href="#nosotros" class="btn-secondary">¿Quiénes somos?</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card card-1">
+          <span class="card-number">98%</span>
+          <span class="card-label">Tasa de aprobación</span>
+        </div>
+
+        <div class="hero-card card-2">
+          <span class="card-number">25+</span>
+          <span class="card-label">Años de experiencia</span>
+        </div>
+
+        <div class="hero-card card-3">
+          <span class="card-number">1,200</span>
+          <span class="card-label">Alumnos activos</span>
+        </div>
+      </div>
+
+    </section>
     <!-- ============================================================
          FIN PRESENTACIÓN
          ============================================================ -->
@@ -116,7 +117,6 @@
           <div class="service-icon">📚</div>
           <h3>Educación Primaria</h3>
           <p>Base sólida de conocimientos con metodologías activas y aprendizaje por proyectos.</p>
-          <link rel="html" href="">
         </div>
         <div class="service-card featured">
           <div class="service-icon">🎓</div>
@@ -157,36 +157,69 @@
          ============================================================ -->
     <section id="nosotros">
       <div class="nosotros-content">
+
         <div class="nosotros-text">
+
           <span class="section-tag">Nuestra historia</span>
-          <h2>Más de dos décadas<br /><em>educando con pasión</em></h2>
-          <p>Instituto Lumina Ofrece un gran serivicio de educcacion para su hijo, hija o hatsa usted mismo, nuestro objetivo es llegar mas haya de los estandares de la educacion promedio y sacar a relucir sus habilidades</p>
-          <p>Hoy somos una institución reconocida a nivel regional, con docentes altamente capacitados y una comunidad educativa que crece cada año.</p>
+
+          <h2>Más de dos décadas<br><em>educando con pasión</em></h2>
+
+          <div class="nosotros-divider"></div>
+
+          <p>
+            Instituto Luz ofrece un servicio educativo integral para su hijo, hija
+            o usted mismo. Nuestro objetivo es ir más allá de los estándares de la
+            educación promedio y potenciar al máximo sus habilidades.
+          </p>
+          <p>
+            Hoy somos una institución reconocida a nivel regional, con docentes
+            altamente capacitados y una comunidad educativa que crece cada año.
+          </p>
+
           <div class="valores-grid">
+
             <div class="valor">
-              <span class="valor-icon">⚡</span>
-              <strong>Innovación</strong>
+              <div class="valor-icon">
+                <img src="./png/innovacion.png" alt="Icono innovacion" height="24" style="object-fit:contain;">
+                <strong>Innovación</strong>
+              </div>
+              <p class="valor-desc">Métodos modernos que transforman el aprendizaje.</p>
             </div>
+
             <div class="valor">
-              <span class="valor-icon">🤝</span>
-              <strong>Comunidad</strong>
+              <div class="valor-icon">
+                <img src="./png/comunicacion.png" alt="Icono Comunidad" height="24" style="object-fit:contain;">
+                <strong>Comunidad</strong>
+              </div>
+              <p class="valor-desc">Un entorno donde cada persona importa.</p>
             </div>
+
             <div class="valor">
-              <span class="valor-icon">🎯</span>
-              <strong>Excelencia</strong>
+              <div class="valor-icon">
+                <img src="./png/cerrebro.png" alt="Icono Excelencia" height="24" style="object-fit:contain;">
+                <strong>Excelencia</strong>
+              </div>
+              <p class="valor-desc">Comprometidos con los más altos estándares.</p>
             </div>
+
             <div class="valor">
-              <span class="valor-icon">💡</span>
-              <strong>Creatividad</strong>
+              <div class="valor-icon">
+                <img src="./png/vombilla.png" alt="Icono Creatividad" height="24" style="object-fit:contain;">
+                <strong>Creatividad</strong>
+              </div>
+              <p class="valor-desc">Fomentamos el pensamiento original y crítico.</p>
             </div>
+
           </div>
-        </div>
+        </div><!-- /nosotros-text -->
+
         <div class="nosotros-visual">
           <div class="nosotros-img-placeholder">
             <span>📷</span>
             <p>Foto institucional</p>
           </div>
         </div>
+
       </div>
     </section>
     <!-- ============================================================
@@ -211,7 +244,7 @@
             <span class="info-icon">📍</span>
             <div>
               <strong>Dirección</strong>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Los+Educadores+245,+Lima" target="_blank" rel="noopener noreferrer" class="direccion-link">Av. Los Educadores 245, Lima</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Av.+Los+Educadores+245,+Lima" target="_blank" rel="noopener noreferrer" class="direccion-link">Av. Los Educadores 245, Lima</a>
             </div>
           </div>
           <div class="info-item">

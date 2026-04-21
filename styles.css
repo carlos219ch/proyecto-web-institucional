@@ -104,6 +104,232 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 /* ============================================================
    SECCIÓN 1: HEADER
    ============================================================ */
+<<<<<<< seccion-PIERO
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+   :root {
+     --color-accent: #F5C842;
+     --color-dark: #0a0a0a;
+     --color-white: #ffffff;
+     --color-muted: rgba(255,255,255,0.55);
+     --font-body: 'Outfit', sans-serif;
+     --max-width: 1200px;
+     --transition: 0.25s ease;
+   }
+   
+   body {
+     font-family: var(--font-body);
+     background: #0a0a0a;
+     color: white;
+     min-height: 200vh;
+   }
+   
+   /* ─── HEADER ─── */
+   #header {
+     position: fixed;
+     top: 0; left: 0;
+     width: 100%;
+     z-index: 100;
+     padding: 0 5%;
+     background: radial-gradient(circle at top, rgba(0,17,255,0.12), rgba(128,0,255,0.08), transparent 40%),
+                 linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+     backdrop-filter: blur(12px);
+     border-bottom: 1px solid rgba(255,255,255,0.06);
+     transition: background var(--transition), box-shadow var(--transition);
+   }
+   
+   /* Línea de brillo superior */
+   #header::before {
+     content: '';
+     position: absolute;
+     top: 0; left: 8%; right: 8%;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, var(--color-accent), rgba(160,80,255,0.7), transparent);
+     opacity: 0.55;
+     pointer-events: none;
+   }
+   
+   #header.scrolled {
+     background: linear-gradient(180deg, rgba(0,0,0,0.97) 0%, rgba(10,10,10,0.97) 100%);
+     box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+   }
+   
+   /* ─── NAVBAR ─── */
+   .navbar {
+     max-width: var(--max-width);
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     height: 70px;
+     gap: 24px;
+   }
+   
+   /* ─── LOGO ─── */
+   .logo {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 1.1rem;
+     font-family: var(--font-body);
+     white-space: nowrap;
+     text-decoration: none;
+     color: var(--color-white);
+     letter-spacing: 0.01em;
+   }
+   
+   .logo-icon {
+     width: 26px;
+     height: 26px;
+     object-fit: contain;
+     filter: drop-shadow(0 0 8px rgba(245,200,66,0.6));
+     transition: filter var(--transition), transform var(--transition);
+   }
+   
+   .logo:hover .logo-icon {
+     filter: drop-shadow(0 0 14px rgba(245,200,66,0.9));
+     transform: rotate(15deg) scale(1.1);
+   }
+   
+   .logo-text {
+     font-weight: 300;
+     font-size: 1.05rem;
+     color: rgba(255,255,255,0.9);
+   }
+   
+   .logo-text strong {
+     font-weight: 700;
+     color: var(--color-white);
+   }
+   
+   /* ─── NAV LINKS ─── */
+   .nav-links {
+     display: flex;
+     gap: 32px;
+     list-style: none;
+     margin: 0 auto;
+   }
+   
+   .nav-links a {
+     font-size: 0.9rem;
+     font-weight: 400;
+     color: var(--color-muted);
+     text-decoration: none;
+     letter-spacing: 0.03em;
+     position: relative;
+     padding-bottom: 3px;
+     transition: color var(--transition);
+   }
+   
+   /* Underline animado */
+   .nav-links a::after {
+     content: '';
+     position: absolute;
+     bottom: 0; left: 0;
+     width: 0%; height: 1px;
+     background: var(--color-accent);
+     transition: width 0.3s ease;
+   }
+   
+   .nav-links a:hover {
+     color: var(--color-white);
+   }
+   
+   .nav-links a:hover::after {
+     width: 100%;
+   }
+   
+   /* ─── BOTÓN MATRÍCULA ─── */
+   .btn-matricula {
+     background: var(--color-accent);
+     color: var(--color-dark);
+     font-family: var(--font-body);
+     font-weight: 700;
+     font-size: 0.85rem;
+     padding: 10px 22px;
+     border-radius: 50px;
+     border: none;
+     cursor: pointer;
+     white-space: nowrap;
+     letter-spacing: 0.02em;
+     position: relative;
+     overflow: hidden;
+     transition: transform var(--transition), box-shadow var(--transition);
+   }
+   
+   /* Shimmer al hover */
+   .btn-matricula::before {
+     content: '';
+     position: absolute;
+     top: 0; left: -75%;
+     width: 50%; height: 100%;
+     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+     transform: skewX(-20deg);
+     transition: left 0.5s ease;
+   }
+   
+   .btn-matricula:hover {
+     transform: scale(1.06);
+     box-shadow: 0 0 20px rgba(245,200,66,0.45);
+   }
+   
+   .btn-matricula:hover::before {
+     left: 125%;
+   }
+   
+   /* ─── MENU TOGGLE (mobile) ─── */
+   .menu-toggle {
+     display: none;
+     background: none;
+     border: 1px solid rgba(255,255,255,0.15);
+     color: var(--color-white);
+     font-size: 1.2rem;
+     cursor: pointer;
+     padding: 6px 10px;
+     border-radius: 8px;
+     transition: background var(--transition);
+   }
+   
+   .menu-toggle:hover {
+     background: rgba(255,255,255,0.08);
+   }
+   
+   /* ─── RESPONSIVE ─── */
+   @media (max-width: 768px) {
+     .nav-links {
+       display: none;
+       flex-direction: column;
+       gap: 0;
+       position: absolute;
+       top: 70px; left: 0; right: 0;
+       background: rgba(5,5,15,0.97);
+       border-bottom: 1px solid rgba(255,255,255,0.07);
+       padding: 12px 0;
+       backdrop-filter: blur(16px);
+     }
+   
+     .nav-links.open {
+       display: flex;
+     }
+   
+     .nav-links li a {
+       display: block;
+       padding: 14px 5%;
+       font-size: 1rem;
+       border-bottom: 1px solid rgba(255,255,255,0.04);
+     }
+   
+     .nav-links a::after { display: none; }
+   
+     .menu-toggle {
+       display: block;
+     }
+   
+     .btn-matricula {
+       display: none;
+     }
+   }
+=======
 #header {
   position: fixed;
   top: 0;
@@ -185,6 +411,7 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   cursor: pointer;
 }
 
+>>>>>>> main
 
 /* ============================================================
    SECCIÓN 2: PRESENTACIÓN (HERO)
@@ -318,12 +545,65 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 /* ============================================================
    SECCIÓN 4: NOSOTROS
    ============================================================ */
+/* ─── SECCIÓN NOSOTROS ─── */
+
 #nosotros {
   padding: 100px 5%;
   max-width: var(--max-width);
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top right, #1a0033 0%, #050008 100%);
 }
 
+/* Destellos animados */
+#nosotros::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    400px 100px #fff,
+    800px 300px #fff,
+    1200px 150px #F5C842;
+  animation: lluviaMasiva 6s linear infinite;
+  opacity: 0;
+}
+
+#nosotros::after {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 200px;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    200px 50px rgba(255,255,255,0.8),
+    600px 250px rgba(245,200,66,0.5);
+  animation: lluviaMasiva 4s linear infinite;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+@keyframes lluviaMasiva {
+  0%   { transform: rotate(35deg) translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  40%  {
+    box-shadow:
+      400px 100px 20px 2px white,
+      800px 300px 20px 2px white,
+      1200px 150px 20px 2px #F5C842;
+    transform: rotate(35deg) translateX(1500px);
+    opacity: 0;
+  }
+  100% { transform: rotate(35deg) translateX(1500px); opacity: 0; }
+}
+
+/* ─── LAYOUT ─── */
 .nosotros-content {
   display: flex;
   align-items: center;
@@ -331,27 +611,120 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 }
 
 .nosotros-text { flex: 1; }
+.nosotros-visual { flex: 1; }
 
+/* ─── ETIQUETA SUPERIOR ─── */
+.section-tag,
+.nosotros-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent, #F5C842);
+  border: 1px solid rgba(245,200,66,0.35);
+  border-radius: 50px;
+  padding: 6px 14px;
+  margin-bottom: 28px;
+}
+
+.nosotros-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent, #F5C842);
+  box-shadow: 0 0 6px rgba(245,200,66,0.8);
+}
+
+/* ─── TÍTULO ─── */
 .nosotros-text h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-.nosotros-text p {
-  color: var(--color-muted);
-  margin-bottom: 16px;
-  font-size: 0.95rem;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
+/* Línea dorada en itálica */
+.nosotros-text h2 em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-accent, #F5C842);
+  display: block;
+  /* Sutil text-shadow para dar brillo */
+  text-shadow: 0 0 40px rgba(245,200,66,0.25);
+}
+
+/* ─── PÁRRAFOS ─── */
+.nosotros-text p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 18px;
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+/* ─── DIVISOR ─── */
+.nosotros-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent, #F5C842), transparent);
+  border-radius: 2px;
+  margin: 28px 0;
+}
+
+/* ─── GRID DE VALORES ─── */
 .valores-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
   margin-top: 36px;
 }
 
 .valor {
+<<<<<<< seccion-PIERO
+  background: rgba(10, 0, 15, 0.85);
+  border: 1px solid rgba(245,200,66,0.15);
+  border-radius: 16px;
+  padding: 22px 20px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.07);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.valor:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245,200,66,0.55);
+  box-shadow:
+    0 0 24px rgba(245,200,66,0.15),
+    inset 0 0 12px rgba(245,200,66,0.06);
+}
+
+/* Icono + nombre en fila */
+.valor-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+=======
   background: rgba(10, 0, 15, 0.9);
     border: 1px solid rgba(255, 0, 255, 0.2);
     border-radius: 20px;
@@ -362,26 +735,85 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
     justify-content: center;
     box-shadow: 0 0 30px rgba(255, 0, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+>>>>>>> main
 }
-.valor-icon { font-size: 1.3rem; }
 
-.nosotros-visual { flex: 1; }
+.valor-icon img {
+  height: 1.3rem;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 5px rgba(245,200,66,0.6));
+}
 
+/* Descripción corta bajo el nombre */
+.valor-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.42);
+  font-weight: 300;
+  line-height: 1.5;
+  padding-left: 2px;
+}
+
+.valor:hover .valor-icon {
+  color: var(--color-accent, #F5C842);
+}
+
+/* ─── IMAGEN PLACEHOLDER ─── */
 .nosotros-img-placeholder {
-  background: var(--color-mid);
-  border: 2px dashed rgba(255,255,255,0.12);
+  background: rgba(15, 5, 25, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px;
-  height: 380px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: var(--color-muted);
-  font-size: 0.9rem;
+  color: rgba(255,255,255,0.25);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
 }
-.nosotros-img-placeholder span { font-size: 3rem; }
 
+/* Brillo de esquina en la imagen */
+.nosotros-img-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle at top right, rgba(245,200,66,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.nosotros-img-placeholder span { font-size: 2.5rem; opacity: 0.4; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nosotros-content {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .nosotros-visual {
+    width: 100%;
+  }
+
+  .nosotros-img-placeholder {
+    height: 280px;
+  }
+
+  .nosotros-text p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .valores-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ============================================================
    SECCIÓN 5: CONTACTO
