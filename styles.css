@@ -306,11 +306,50 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 /* ============================================================
    SECCIÓN 4: NOSOTROS
    ============================================================ */
-#nosotros {
-  padding: 100px 5%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
+   #nosotros {
+    padding: 100px 5%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative; 
+    overflow: hidden;    
+    background: #050008;
+  }
+
+  #nosotros::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px white, 
+                0 0 20px 2px rgba(251, 255, 0, 0.5), 
+                -50px 0 30px 2px rgba(255, 255, 255, 0.2);
+    
+    /* Animación */
+    animation: estrellaFugaz 5s linear infinite;
+    opacity: 0;
+  }
+  
+  @keyframes estrellaFugaz {
+    0% {
+      transform: rotate(35deg) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    20% {
+      transform: rotate(35deg) translateX(1200px); 
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(35deg) translateX(1200px);
+      opacity: 0;
+    }
+  }
 
 .nosotros-content {
   display: flex;
@@ -322,83 +361,71 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 
 .nosotros-text h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Un poco más de impacto */
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 24px;
-  background: linear-gradient(to right, #fff, var(--color-muted));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
-
 .nosotros-text p {
-  color: #3d3d3d; /* Gris más suave */
-  line-height: 1.6;
-  max-width: 90%; /* Para que las líneas no sean tan largas */
+  color: var(--color-muted);
+  margin-bottom: 16px;
+  font-size: 0.95rem;
 }
 
-/* Ajuste en el contenedor de los cuadros */
+.valores-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 36px;
+}
+
 .valor {
-  background: rgba(15, 2, 25, 0.6); /* Un poco más traslúcido */
-  backdrop-filter: blur(10px);      /* Efecto de cristal esmerilado */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 24px;
-  min-height: 120px; /* Reducido un poco para que no sobre tanto espacio */
+  background: rgba(10, 0, 15, 0.9);
+  border: 1px solid rgba(164, 167, 19, 0.2);
+  border-radius: 20px;
+  padding: 22px;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alineado arriba para mejor control */
-  gap: 12px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .valor:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-accent);
-  box-shadow: 0 10px 30px rgba(164, 167, 19, 0.2);
+  transform: translateY(-5px); 
+  border-color: #fbff00; 
+  box-shadow: 0 0 20px rgba(251, 255, 0, 0.2), 
+              inset 0 0 10px rgba(251, 255, 0, 0.1);
 }
 
-
-.valor-icon {
-  display: flex;
-  flex-direction: column; 
-  align-items: flex-start;
-  gap: 8px;
+.valor:hover strong {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-.valor-icon img {
-  height: 28px; 
-  width: auto;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
-}
-
-.valor strong {
+.valor-icon { display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  color: #fff;
+  font-family: var(--font-body);
+  white-space: nowrap;
+  text-decoration: none; 
 }
+
 
 .nosotros-visual { flex: 1; }
 
 .nosotros-img-placeholder {
-  background: linear-gradient(145deg, rgba(30, 30, 40, 0.4), rgba(10, 10, 15, 0.6));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px; /* Más redondeado */
-  height: 450px; /* Un poco más alto para equilibrar el texto */
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efecto decorativo de fondo */
-.nosotros-img-placeholder::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  right: -20%;
-  width: 200px;
-  height: 200px;
-  background: var(--color-accent);
-  filter: blur(100px);
-  opacity: 0.1;
+  background: var(--color-mid);
+  border: 2px dashed rgba(255,255,255,0.12);
+  border-radius: 20px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
 }
 .nosotros-img-placeholder span { font-size: 3rem; }
 
