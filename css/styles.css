@@ -684,6 +684,31 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
 }
 
 
+/* ── Botón volver arriba ─────────────────────────────────────── */
+#btn-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 99;
+}
+#btn-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#btn-top:hover { transform: translateY(-3px); }
+
 /* ============================================================
    SECCIÓN 6: FOOTER
    ============================================================ */

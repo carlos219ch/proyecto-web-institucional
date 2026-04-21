@@ -116,6 +116,17 @@ if (mensajeInput && charCount) {
   });
 }
 
+// ── Botón volver arriba ───────────────────────────────────────
+const btnTop = document.getElementById('btn-top');
+if (btnTop) {
+  window.addEventListener('scroll', () => {
+    btnTop.classList.toggle('visible', window.scrollY > 400);
+  });
+  btnTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // ── Footer: año dinámico ─────────────────────────────────────
 const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
