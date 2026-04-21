@@ -654,6 +654,20 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
 }
 
+.mensaje-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.char-counter {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  text-align: right;
+  transition: color var(--transition);
+}
+.char-counter.near-limit { color: var(--color-accent); }
+.char-counter.at-limit   { color: #e85c5c; }
+
 .form-group input.input-error,
 .form-group textarea.input-error {
   border-color: #e85c5c;
