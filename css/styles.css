@@ -427,6 +427,24 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   min-height: 20px;
 }
 
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 22px;
+  border-radius: 50px;
+  margin-top: 8px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
 .form-group input.input-error,
 .form-group textarea.input-error {
   border-color: #e85c5c;
