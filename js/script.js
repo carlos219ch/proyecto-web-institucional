@@ -32,14 +32,78 @@ menuToggle.addEventListener('click', () => {
 const form = document.getElementById('contactoForm');
 const feedback = document.getElementById('formFeedback');
 
+function setFieldState(input, errorEl, message) {
+  if (message) {
+    input.classList.add('input-error');
+    input.classList.remove('input-ok');
+    errorEl.textContent = message;
+  } else {
+    input.classList.remove('input-error');
+    input.classList.add('input-ok');
+    errorEl.textContent = '';
+  }
+}
+
+function validateForm() {
+  const nombre  = document.getElementById('nombre');
+  const email   = document.getElementById('email');
+  const mensaje = document.getElementById('mensaje');
+  let valid = true;
+
+  if (!nombre.value.trim()) {
+    setFieldState(nombre, document.getElementById('error-nombre'), 'El nombre es obligatorio.');
+    valid = false;
+  } else {
+    setFieldState(nombre, document.getElementById('error-nombre'), '');
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email.value.trim()) {
+    setFieldState(email, document.getElementById('error-email'), 'El correo es obligatorio.');
+    valid = false;
+  } else if (!emailRegex.test(email.value.trim())) {
+    setFieldState(email, document.getElementById('error-email'), 'Ingresa un correo válido.');
+    valid = false;
+  } else {
+    setFieldState(email, document.getElementById('error-email'), '');
+  }
+
+  if (!mensaje.value.trim()) {
+    setFieldState(mensaje, document.getElementById('error-mensaje'), 'El mensaje no puede estar vacío.');
+    valid = false;
+  } else {
+    setFieldState(mensaje, document.getElementById('error-mensaje'), '');
+  }
+
+  return valid;
+}
+
 if (form) {
+  // Validar campo al perder el foco (feedback inmediato)
+  ['nombre', 'email', 'mensaje'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('blur', validateForm);
+    el.addEventListener('input', () => {
+      if (el.classList.contains('input-error')) validateForm();
+    });
+  });
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
     feedback.textContent = '✅ Mensaje enviado. Te responderemos pronto.';
     form.reset();
+    ['nombre', 'email', 'mensaje'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.remove('input-ok', 'input-error');
+    });
     setTimeout(() => { feedback.textContent = ''; }, 4000);
   });
 }
+
+// ── Footer: año dinámico ─────────────────────────────────────
+const yearEl = document.getElementById('footer-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ── Animación de aparición al hacer scroll ───────────────────
 const observer = new IntersectionObserver((entries) => {
