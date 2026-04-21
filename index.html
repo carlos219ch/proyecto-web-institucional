@@ -17,22 +17,26 @@
        Equipo encargado: ___________
        Archivos: index.html (esta sección) + css/styles.css (#header)
        ============================================================ -->
-  <header id="header">
-    <nav class="navbar">
-      <div class="logo">
-        <img src="./png/Icon.png" alt="Logo" class="logo-icon">
-        <span class="logo-text">Instituto <strong>Luz</strong></span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#presentacion">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-      <button class="btn-matricula">Matrícula 2026</button>
-      <button class="menu-toggle" aria-label="Menú">&#9776;</button>
-    </nav>
-  </header>
+       <header id="header">
+        <nav class="navbar">
+    
+          <a href="#" class="logo">
+            <img src="./png/Icon.png" alt="Logo" class="logo-icon">
+            <span class="logo-text">Instituto <strong>Luz</strong></span>
+          </a>
+    
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#presentacion">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+    
+          <button class="btn-matricula">Matrícula 2026</button>
+          <button class="menu-toggle" id="menuToggle" aria-label="Menú">&#9776;</button>
+    
+        </nav>
+      </header>
   <!-- ============================================================
        FIN HEADER
        ============================================================ -->
@@ -129,49 +133,78 @@
          Equipo encargado: ___________
          Archivos: index.html (esta sección) + css/styles.css (#nosotros)
          ============================================================ -->
-    <section id="nosotros">
-      <div class="nosotros-content">
-        <div class="nosotros-text">
-          <span class="section-tag">Nuestra historia</span>
-          <h2>Más de dos décadas<br /><em>educando con pasión</em></h2>
-          <p>Instituto Lumina Ofrece un gran serivicio de educcacion para su hijo, hija o hatsa usted mismo, nuestro objetivo es llegar mas haya de los estandares de la educacion promedio y sacar a relucir sus habilidades</p>
-          <p>Hoy somos una institución reconocida a nivel regional, con docentes altamente capacitados y una comunidad educativa que crece cada año.</p>
-          <div class="valores-grid">
-            <div class="valor">
-                <div>
-              <img src="./png/innovacion.png" alt="Icono innovacion" height="24" style="object-fit: contain;">
-              <strong>Innovación</strong>
-            </div>
-            </div>
-            <div class="valor">
-                <div>
-                <img src="./png/comunicacion.png" alt="Icono Comunidad" height="24" style="object-fit: contain;">
-              <strong>Comunidad</strong>
-            </div>
-            </div>
-            <div class="valor">
-
-              <div class="valor-icon">
-                <img src="./png/cerrebro.png" alt="Icono Excelencia" height="24" style="object-fit: contain ;">
-              <strong>Excelencia</strong>
-            </div>
-            </div>
-            <div class="valor">
-                <div class="valor-icon">
-                    <img src="./png/vombilla.png" alt="Icono Creatividad" height="24" style="object-fit: contain;">
-                    <strong>Creatividad</strong>
+         <section id="nosotros">
+            <div class="nosotros-content">
+          
+              <!-- TEXTO -->
+              <div class="nosotros-text">
+          
+                <span class="section-tag">Nuestra historia</span>
+          
+                <h2>Más de dos décadas<br><em>educando con pasión</em></h2>
+          
+                <div class="nosotros-divider"></div>
+          
+                <p>
+                  Instituto Luz ofrece un servicio educativo integral para su hijo, hija
+                  o usted mismo. Nuestro objetivo es ir más allá de los estándares de la
+                  educación promedio y potenciar al máximo sus habilidades.
+                </p>
+                <p>
+                  Hoy somos una institución reconocida a nivel regional, con docentes
+                  altamente capacitados y una comunidad educativa que crece cada año.
+                </p>
+          
+                <!-- Grid de valores -->
+                <div class="valores-grid">
+          
+                  <div class="valor">
+                    <div class="valor-icon">
+                      <img src="./png/innovacion.png" alt="Icono innovacion" height="24" style="object-fit:contain;">
+                      <strong>Innovación</strong>
+                    </div>
+                    <p class="valor-desc">Métodos modernos que transforman el aprendizaje.</p>
                   </div>
+          
+                  <div class="valor">
+                    <div class="valor-icon">
+                      <img src="./png/comunicacion.png" alt="Icono Comunidad" height="24" style="object-fit:contain;">
+                      <strong>Comunidad</strong>
+                    </div>
+                    <p class="valor-desc">Un entorno donde cada persona importa.</p>
+                  </div>
+          
+                  <div class="valor">
+                    <div class="valor-icon">
+                      <img src="./png/cerrebro.png" alt="Icono Excelencia" height="24" style="object-fit:contain;">
+                      <strong>Excelencia</strong>
+                    </div>
+                    <p class="valor-desc">Comprometidos con los más altos estándares.</p>
+                  </div>
+          
+                  <div class="valor">
+                    <div class="valor-icon">
+                      <img src="./png/vombilla.png" alt="Icono Creatividad" height="24" style="object-fit:contain;">
+                      <strong>Creatividad</strong>
+                    </div>
+                    <p class="valor-desc">Fomentamos el pensamiento original y crítico.</p>
+                  </div>
+          
+                </div>
+              </div><!-- /nosotros-text -->
+          
+              <!-- IMAGEN -->
+              <div class="nosotros-visual">
+                <!-- Cuando tengas la foto real, reemplaza este div por:
+                     <img src="./png/foto-institucional.jpg" alt="Instituto Luz" style="width:100%;border-radius:20px;"> -->
+                <div class="nosotros-img-placeholder">
+                  <span>📷</span>
+                  <p>Foto institucional</p>
+                </div>
+              </div>
+          
             </div>
-          </div>
-        </div>
-        <div class="nosotros-visual">
-          <div class="nosotros-img-placeholder">
-            <span>📷</span>
-            <p>Foto institucional</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
     <!-- ============================================================
          FIN NOSOTROS
          ============================================================ -->
