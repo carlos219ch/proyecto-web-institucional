@@ -351,14 +351,11 @@ em { font-style: italic; color: var(--color-accent); font-family: var(--font-dis
   box-shadow: 0 0 30px rgba(255, 0, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.valor-icon { 
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.1rem;
-  font-family: var(--font-body);
-  white-space: nowrap;
-  text-decoration: none; /* Por si es un enlace */
+.valor-icon img {
+  height: 1.3rem; 
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 .nosotros-visual { flex: 1; }
